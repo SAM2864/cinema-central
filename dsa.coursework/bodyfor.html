@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bodyform.css">
+    <title>CinemaCentral</title>
+</head>
+<body>
+    <div class="form_wrapper" 
+    style="position: relative; top: -10vh;">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Movie Information Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form enctype="multipart/form-data">
+                <div class="input_field">
+                  <input type="text" name="movie_id" placeholder="Movie ID" required />
+                </div>
+                <div class="input_field">
+                  <input type="text" name="title" placeholder="Title" required />
+                </div>
+                <div class="input_field">
+                  <input type="text" name="genre" placeholder="Genre" required />
+                </div>
+                <div class="input_field">
+                  <input type="text" name="director" placeholder="Director" required />
+                </div>
+                <div class="input_field">
+                  <input type="text" name="cast" placeholder="Cast" required />
+                </div>
+                <div class="input_field">
+                  <input type="date" name="release_date" required />
+                </div>
+                <div class="input_field">
+                  <input type="text" name="duration" placeholder="Duration (in minutes)" required />
+                </div>
+                <div class="input_field">
+                  <input type="file" name="movie_poster" accept="image/*" required />
+                </div>
+                <input class="button" type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaCentral</title>
+    <link rel="stylesheet" href="loginform.css">
+    <style>
+        body {
+            background-image: url('cinema central.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="forms-section">
+        <h1 class="section-title"></h1>
+        <div class="forms">
+            <div class="form-wrapper is-active" data-form-type="login">
+                <button type="button" class="switcher switcher-login" data-form-type="login">Login<span class="underline"></span></button>
+                <form class="form form-login" data-form-type="login">
+                    <fieldset>
+                        <legend>Please, enter your email and password for login.</legend>
+                        <div class="input-block">
+                            <label for="login-email">E-mail</label>
+                            <input id="login-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">Password</label>
+                            <input id="login-password" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+            </div>
+            <div class="form-wrapper" data-form-type="signup">
+                <button type="button" class="switcher switcher-signup" data-form-type="signup">Sign Up<span class="underline"></span></button>
+                <form class="form form-signup" data-form-type="signup">
+                    <fieldset>
+                        <legend>Please, enter your information for sign up.</legend>
+                        <div class="input-block">
+                            <label for="signup-userid">UserID</label>
+                            <input id="signup-userid" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-username">Username</label>
+                            <input id="signup-username" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-email">E-mail</label>
+                            <input id="signup-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-phone">Phone Number</label>
+                            <input id="signup-phone" type="tel" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-address">Address</label>
+                            <input id="signup-address" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">Password</label>
+                            <input id="signup-password" type="password" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password-confirm">Confirm password</label>
+                            <input id="signup-password-confirm" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-signup">Continue</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const switchers = document.querySelectorAll('.switcher');
+
+        switchers.forEach(switcher => {
+            switcher.addEventListener('click', function() {
+                const formType = this.dataset.formType;
+                const formWrappers = document.querySelectorAll('.form-wrapper');
+                formWrappers.forEach(wrapper => {
+                    if (wrapper.dataset.formType === formType) {
+                        wrapper.classList.add('is-active');
+                    } else {
+                        wrapper.classList.remove('is-active');
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('.form-login');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'body.html';
+        });
+    });
+    </script>
+</body>
+</html>
